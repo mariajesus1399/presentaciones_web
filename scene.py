@@ -63,8 +63,18 @@ class Plantilla(Scene):
         Solucion_introduccion2_2 = Tex("Al menos 200: $P(X > 200) = \\int_{200}^{+\\infty} f_x(x) dx = 1 - P(X < 200) = 1 - 0.864665 = 0.135335$. Verificación con la integral:", font_size=30)
         #Ingrese las ecuaciones para la solucion de la segunda pregunta parte 2
         Solucion_eq2_2 = MathTex(r"P(X > 200) 	&= \int_{200}^{\infty} \frac{x}{\theta^2} e^{-x^2/(2\theta^2)} dx \\ &= \frac{1}{100^2} \left[ - \frac{1}{2/(2\cdot 100^2)} e^{-x^2/(2(100)^2)} \right]_{200}^{\infty} \\ &= - \left(e^{-(\infty)^2/(2\cdot 100^2)} - e^{-(200)^2/(2\cdot 100^2)} \right) \\ &= - \left(0 - e^{-2}\right) = 0.135335", font_size=30)
-        self.play(ApplyMethod(Solucion_introduccion2_2.shift,2*UP))
-        self.play(Write(Solucion_eq2_2))
+        self.play(ApplyMethod(Solucion_introduccion2_2.shift,1*UP))
+        self.play(ApplyMethod(Solucion_eq2_2.shift,1*DOWN))
         self.wait(5)
         self.remove(*Pregunta2,*Solucion_introduccion2_2, *Solucion_eq2_2)
         #---
+
+        #Sexta diapositiva
+        #Ingrese la introducción para la solucion de la tercera pregunta
+        Solucion_introduccion3 = Tex("¿Cuál es la probabilidad de que $X$ está entre 100 y 200 (mismo $\\theta$)?", font_size=30)
+        #Ingrese las ecuaciones para la solucion de la tercera pregunta
+        Solucion_eq3_1 = MathTex(r"P(100 < X < 200) 	&= \frac{1}{100^2} \left[ - \frac{1}{2/(2\cdot 100^2)} e^{-x^2/(2(100)^2)} \right]_{100}^{200} \\ &= - \left(e^{-(200)^2/(2\cdot 100^2)} - e^{-(100)^2/(2\cdot 100^2)} \right) \\ &= - \left( e^{-2} - e^{-\frac{1}{2}} \right) = 0.471195", font_size=28)
+        Solucion_eq3_2 = Tex("La probabilidad anterior en el pdf de la v.a. es el área sombreada:", font_size=28)
+        self.play(ApplyMethod(Solucion_introduccion3.shift,3*UP))
+        self.play(ApplyMethod(Solucion_eq3_1.shift,1*UP))
+        self.play(ApplyMethod(Solucion_eq3_2.shift,1*DOWN))
