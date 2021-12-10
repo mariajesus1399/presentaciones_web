@@ -9,4 +9,9 @@
 
     manim -qh scene.py  
     manim-presentation Plantilla
+    
+3. Para ajustar la pantalla completa, reduciendo la calidad : 
+
+    manim_presentation --fullscreen example
+ 
 
