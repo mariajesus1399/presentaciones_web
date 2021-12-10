@@ -1,6 +1,6 @@
 from manim import *
-
-class Plantilla(Scene):
+from manim_presentation import Slide
+class Plantilla(Slide):
     def construct(self):
         #--- Primera diapositiva
         #Ingrese el número de problema
@@ -12,6 +12,7 @@ class Plantilla(Scene):
         self.play(Write(Titulo))
         #Puede variar el tiempo de espera entre cada diapostiva
         self.wait(5)
+        self.pause()
         self.remove(*Problema,*Titulo)
         #---
 
@@ -26,6 +27,7 @@ class Plantilla(Scene):
         self.play(ApplyMethod(Enunciado_eq1.shift,2*UP))
         #Puede variar el tiempo de espera entre cada diapostiva
         self.wait(5)
+        self.pause()
         self.remove(*Enunciado,*Enunciado_eq1)
         #---
 
@@ -41,6 +43,7 @@ class Plantilla(Scene):
         self.play(Write(Solucion_eq1))
         #Puede variar el tiempo de espera entre cada diapostiva
         self.wait(5)
+        self.pause()
         self.remove(*Pregunta1,*Solucion_introduccion1, *Solucion_eq1)
         #---
 
@@ -55,6 +58,7 @@ class Plantilla(Scene):
         self.play(ApplyMethod(Solucion_introduccion2_1.shift,2*UP))
         self.play(Write(Solucion_eq2_1))
         self.wait(5)
+        self.pause()
         self.remove(*Solucion_introduccion2_1, *Solucion_eq2_1)
         #---
 
@@ -66,6 +70,7 @@ class Plantilla(Scene):
         self.play(ApplyMethod(Solucion_introduccion2_2.shift,1*UP))
         self.play(ApplyMethod(Solucion_eq2_2.shift,1*DOWN))
         self.wait(5)
+        self.pause()
         self.remove(*Pregunta2,*Solucion_introduccion2_2, *Solucion_eq2_2)
         #---
 
@@ -78,3 +83,6 @@ class Plantilla(Scene):
         self.play(ApplyMethod(Solucion_introduccion3.shift,3*UP))
         self.play(ApplyMethod(Solucion_eq3_1.shift,1*UP))
         self.play(ApplyMethod(Solucion_eq3_2.shift,1*DOWN))
+        self.wait(5)
+        self.pause()
+
