@@ -14,4 +14,6 @@
 
     manim_presentation --fullscreen example
  
+4. Para guardar cada scene como un gif : 
 
+    manim -ql --save_as_gif scene.py
